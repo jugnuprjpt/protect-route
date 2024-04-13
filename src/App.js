@@ -13,7 +13,7 @@ function App() {
       <Routes> 
           <Route path="/" exact element={<Login/> } /> 
           <Route element={<ProtectRoute/>}>
-          <Route path="/" element={<About/> } /> 
+          <Route path="/about" element={<About/> } /> 
           </Route>
        </Routes> 
    </BrowserRouter> 

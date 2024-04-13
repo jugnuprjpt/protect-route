@@ -7,9 +7,9 @@ function Login() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    let login = localStorage.getItem("login");
+    let login = localStorage.getItem("token");
     if (login) {
-      navigate("/");
+      navigate("/about");
     }
   }, []);
 
@@ -17,7 +17,7 @@ function Login() {
     e.preventDefault();
 
     if (emailId == "abc@gmail.com" && pwd == 123456) {
-      localStorage.setItem("login", true);
+      localStorage.setItem("token", true);
       navigate("/about");
     } else {
       setEmailId("");

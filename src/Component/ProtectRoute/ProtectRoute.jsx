@@ -1,15 +1,10 @@
-import { Outlet, useNavigate } from 'react-router-dom';
+import React from 'react'
+import { Navigate, Outlet } from 'react-router-dom'
 
-const ProtectRoute = () => {
-  
-    const navigate = useNavigate();
-    const token = localStorage.getItem("token");
-    if (!token) {
-      navigate("/");
-    }
-    return (
-         <Outlet /> 
-    );
-};
+function ProtectRoute() {
+  const isAuthenticated = localStorage.getItem("token");
+  if (!isAuthenticated) return <Navigate to="/" replace />;
+  return <Outlet />;
+}
 
-export default ProtectRoute;
+export default ProtectRoute
